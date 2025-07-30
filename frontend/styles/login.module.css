@@ -1,0 +1,12 @@
+.form {
+  max-width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.erro {
+  color: red;
+  font-size: 14px;
+}
