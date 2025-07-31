@@ -2,7 +2,7 @@
 
 import { cookies } from "next/headers";
 
-export function verificaAutenticacao() {
+export async function verificaAutenticacao() {
   const cookieStore = cookies();
   const token = cookieStore.get("token");
 

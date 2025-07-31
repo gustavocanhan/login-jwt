@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import api from "@/services/api";
 import Cookies from "js-cookie";
 import styles from "@/styles/login.module.css";
@@ -27,5 +27,29 @@ export default function LoginPage() {
     }
   };
 
-  return <form></form>;
+  return (
+    <form className={styles.form} onSubmit={handleLogin}>
+      <h2>Login</h2>
+      <input
+        type="email"
+        placeholder="E-mail"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <br />
+      <br />
+      <input
+        type="password"
+        placeholder="Senha"
+        value={senha}
+        onChange={(e) => setSenha(e.target.value)}
+        required
+      />
+      <br />
+      <br />
+      <button type="submit">Entrar</button>
+      {erro && <p className={styles.erro}>{erro}</p>}
+    </form>
+  );
 }
